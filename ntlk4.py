@@ -1,10 +1,8 @@
 from textblob import TextBlob
 
 def determine_sentiment(sentence):
-    # Analyze the sentiment of the sentence
     analysis = TextBlob(sentence)
     
-    # Determine sentiment based on polarity
     polarity = analysis.sentiment.polarity
     if polarity > 0:
         mood = "Positive"
@@ -15,7 +13,6 @@ def determine_sentiment(sentence):
     
     return mood, polarity
 
-# Example sentences
 sentences = [
     "This product is great, I am very satisfied!",
     "I am disappointed, the product does not match the description.",
@@ -24,7 +21,6 @@ sentences = [
     "This product is stupidly good!"
 ]
 
-# Analyze sentiment for each sentence
 for sentence in sentences:
     mood, polarity = determine_sentiment(sentence)
     print(f"Sentence: \"{sentence}\"")
